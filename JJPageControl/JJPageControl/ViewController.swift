@@ -116,9 +116,13 @@ class ViewController: UIViewController {
         pageControl4.pointCornerRadius = 1
         pageControl4.tag = 904
         pageControl4.isUserInteractionEnabled = true
-        view.addSubview(pageControl4)
+        pageControl4.isCanClickPoint = true
+
+        pageControl4.clickPointClosure = { num in
+            print("clickPointClosure: 带击了第\(num)个")
+        }
         
-        
+        view.addSubview(pageControl4)        
         
     }
 
@@ -159,7 +163,7 @@ extension ViewController: UIScrollViewDelegate {
 extension ViewController:JJPageControlDelegate{
     func jj_pageControlClick(pageControl: JJPageControl, index: Int) {
         
-    print("带击了第\(index)个")
+        print("代理:带击了第\(index)个")
         
     }
     
