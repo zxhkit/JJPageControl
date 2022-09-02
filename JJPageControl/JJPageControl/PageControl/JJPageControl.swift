@@ -10,9 +10,9 @@
 import UIKit
 
 enum JJPageControlAliment {
-    case CenterBottom
-    case LeftBottom
-    case RightBottom
+    case Center
+    case Left
+    case Right
 }
 
 protocol JJPageControlDelegate {
@@ -48,7 +48,7 @@ class JJPageControl: UIControl {
         }
     }
     /// 位置
-    var pageAliment: JJPageControlAliment = .CenterBottom {
+    var pageAliment: JJPageControlAliment = .Center {
         didSet{
             if numberOfPages > 0 {
                 createPointView()
@@ -186,9 +186,9 @@ class JJPageControl: UIControl {
         if frame.width < mainWidth {
             frame.size.width = mainWidth
         }else{
-            if pageAliment == .LeftBottom {
+            if pageAliment == .Left {
                 startX = leftAndRightSpacing
-            } else if pageAliment == .CenterBottom {
+            } else if pageAliment == .Center {
                 startX = (self.frame.size.width - mainWidth)/2.0
             } else {
                 startX = frame.width - mainWidth
