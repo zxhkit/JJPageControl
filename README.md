@@ -2,6 +2,7 @@
 一个Swift版好用的自定义PageControl
 
 OC版本的请参考https://github.com/zxhkit/XHPageControl
+
 OC简书:[iOS自定义PageControl](https://www.jianshu.com/p/aae83cfaeeb4)
 
 将项目工程中的JJPageControl拖拽到你的项目中.
