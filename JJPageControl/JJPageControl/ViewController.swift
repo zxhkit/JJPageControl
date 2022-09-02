@@ -111,7 +111,9 @@ class ViewController: UIViewController {
         pageControl4.frame = CGRect(x: 0, y: 580, width: UIScreen.main.bounds.size.width, height: 30)
         pageControl4.numberOfPages = 7
         pageControl4.delegate = self
-        pageControl4.otherPointSize = CGSize(width: 15, height: 6)
+        pageControl4.otherPointSize = CGSize(width: 15, height: 4)
+        pageControl4.currentPointSize = CGSize(width: 4, height: 4)
+        pageControl4.pointCornerRadius = 1
         pageControl4.tag = 904
         pageControl4.isUserInteractionEnabled = true
         view.addSubview(pageControl4)

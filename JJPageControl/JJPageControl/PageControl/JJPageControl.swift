@@ -263,9 +263,9 @@ class JJPageControl: UIControl {
     }
     
     func clearView() {
-        //        subviews.forEach { subView in
-        //            subView.removeFromSuperview()
-        //        }
+        // subviews.forEach { subView in
+        //     subView.removeFromSuperview()
+        // }
         
         subviews.forEach { $0.removeFromSuperview()}
         dots.removeAll()
