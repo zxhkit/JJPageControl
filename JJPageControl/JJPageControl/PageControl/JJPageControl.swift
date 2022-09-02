@@ -1,10 +1,9 @@
 //
 //  JJPageControl.swift
 //  JJPageControl
-//
-//
-//
-//  Created by zxh on 2022/9/1.
+//  
+//  https://github.com/zxhkit/JJPageControl
+//  Created by xuanhe on 2022/9/1.
 //
 
 import UIKit

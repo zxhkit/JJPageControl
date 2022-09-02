@@ -2,7 +2,8 @@
 //  SceneDelegate.swift
 //  JJPageControl
 //
-//  Created by 天际032 on 2022/9/1.
+//  https://github.com/zxhkit/JJPageControl
+//  Created by xuanhe on 2022/9/1.
 //
 
 import UIKit
