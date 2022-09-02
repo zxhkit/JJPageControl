@@ -149,22 +149,14 @@ extension ViewController: UIScrollViewDelegate {
         default:
             return
         }
-        
     }
-    
-    
-    
 }
 
 
 extension ViewController:JJPageControlDelegate{
     func jj_pageControlClick(pageControl: JJPageControl, index: Int) {
         
-        
-    print(index)
-        
-        
-        
+    print("带击了第\(index)个")
         
     }
     
