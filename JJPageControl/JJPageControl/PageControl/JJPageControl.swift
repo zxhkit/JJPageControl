@@ -129,7 +129,7 @@ class JJPageControl: UIControl {
         }
     }
     ///当前选中点的layer宽
-    var currentLayerBorderWidth: CGFloat? {
+    var currentLayerBorderWidth: CGFloat = 1 {
         didSet{
             if numberOfPages > 0 {
                 createPointView()
@@ -138,7 +138,7 @@ class JJPageControl: UIControl {
     }
     
     ///其他点的layer宽
-    var otherLayerBorderWidth: CGFloat? {
+    var otherLayerBorderWidth: CGFloat = 1 {
         didSet{
             if numberOfPages > 0 {
                 createPointView()
@@ -248,17 +248,17 @@ class JJPageControl: UIControl {
             if page == currentPage {
                 let currentPoint = UIImageView(frame: CGRect(x: startX, y: startY_current, width: currentPointSize.width, height: currentPointSize.height))
                 currentPoint.layer.masksToBounds = true
-                currentPoint.layer.cornerRadius = pointCornerRadius;
+                currentPoint.layer.cornerRadius = pointCornerRadius
                 currentPoint.tag = 1000 + page
                 currentPoint.backgroundColor = currentColor
                 currentPoint.isUserInteractionEnabled = true
                 currentPoint.image = currentBkImage
                 
-                if let w = self.currentLayerBorderWidth {
-                    currentPoint.layer.borderWidth = w
-                }
-                if let color = self.currentLayerBorderColor {
-                    currentPoint.layer.borderColor = color.cgColor
+                if self.currentLayerBorderColor != nil {
+                    currentPoint.layer.borderColor = self.currentLayerBorderColor?.cgColor
+                    currentPoint.layer.borderWidth = self.currentLayerBorderWidth
+                }else{
+                    currentPoint.layer.borderWidth = 0
                 }
                 
                 if isCanClickPoint == true {
@@ -276,17 +276,17 @@ class JJPageControl: UIControl {
             }else{
                 let otherPoint = UIImageView(frame: CGRect(x: startX, y: startY_other, width: otherPointSize.width, height: otherPointSize.height))
                 otherPoint.layer.masksToBounds = true
-                otherPoint.layer.cornerRadius = pointCornerRadius;
+                otherPoint.layer.cornerRadius = pointCornerRadius
                 otherPoint.tag = 1000 + page
                 otherPoint.backgroundColor = otherColor
                 otherPoint.isUserInteractionEnabled = true
                 otherPoint.image = otherBkImage
                 
-                if let w = self.otherLayerBorderWidth {
-                    otherPoint.layer.borderWidth = w
-                }
-                if let color = self.otherLayerBorderColor {
-                    otherPoint.layer.borderColor = color.cgColor
+                if self.otherLayerBorderColor != nil {
+                    otherPoint.layer.borderColor = self.otherLayerBorderColor?.cgColor
+                    otherPoint.layer.borderWidth = self.otherLayerBorderWidth
+                }else{
+                    otherPoint.layer.borderWidth = 0
                 }
                 
                 if isCanClickPoint == true {
@@ -361,6 +361,20 @@ class JJPageControl: UIControl {
             oldDot.backgroundColor = .clear
         }else{
             oldDot.backgroundColor = otherColor
+        }
+        
+        if self.currentLayerBorderColor != nil {
+            newDot.layer.borderColor = self.currentLayerBorderColor?.cgColor
+            newDot.layer.borderWidth = self.currentLayerBorderWidth
+        }else{
+            newDot.layer.borderWidth = 0
+        }
+        
+        if self.otherLayerBorderColor != nil {
+            oldDot.layer.borderColor = self.otherLayerBorderColor?.cgColor
+            oldDot.layer.borderWidth = self.otherLayerBorderWidth
+        }else{
+            oldDot.layer.borderWidth = 0
         }
         
         var oldMinx = oldFrame.minX

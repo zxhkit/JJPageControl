@@ -73,14 +73,22 @@ class ViewController: UIViewController {
         pageControl1.frame = CGRect(x: 0, y: 160, width: UIScreen.main.bounds.size.width, height: 30)
         pageControl1.numberOfPages = 7
         pageControl1.delegate = self
+        pageControl1.otherPointSize = CGSize(width: 12, height: 12)
+        pageControl1.currentPointSize = CGSize(width: 12, height: 12)
+        pageControl1.currentLayerBorderColor = UIColor.red
+        pageControl1.otherLayerBorderColor = UIColor.blue
+        pageControl1.currentColor = .clear
+        pageControl1.otherColor = .clear
+        pageControl1.currentLayerBorderWidth = 2
+        pageControl1.otherLayerBorderWidth = 2
         pageControl1.tag = 901
-        pageControl1.pointCornerRadius = 1
+        pageControl1.pointCornerRadius = 6;
 
         view.addSubview(pageControl1)
         
         pageControl2.frame = CGRect(x: 0, y: 300, width: UIScreen.main.bounds.size.width, height: 30)
-        pageControl2.currentColor = UIColor.red
-        pageControl2.otherColor = UIColor.blue
+        pageControl2.currentColor = UIColor(red: 98/255.0, green: 152/255.0, blue: 19/255.0, alpha: 1)
+        pageControl2.otherColor = UIColor(red: 14/255.0, green: 65/255.0, blue: 190/255.0, alpha: 1)
         pageControl2.pointCornerRadius = 2
         pageControl2.currentPointSize = CGSize(width: 6, height: 12)
         pageControl2.otherPointSize = CGSize(width: 10, height: 6)
@@ -99,11 +107,13 @@ class ViewController: UIViewController {
         pageControl3.frame = CGRect(x: 0, y: 440, width: UIScreen.main.bounds.size.width, height: 30)
         pageControl3.numberOfPages = 7
         pageControl3.delegate = self
-        pageControl3.currentPointSize = CGSize(width: 5, height: 12)
-        pageControl3.otherPointSize = CGSize(width: 15, height: 4)
-        pageControl3.controlSpacing = 3
-        pageControl3.pointCornerRadius = 1
+        pageControl3.currentPointSize = CGSize(width: 18, height: 18)
+        pageControl3.otherPointSize = CGSize(width: 18, height: 18)
+        pageControl3.controlSpacing = 12
+        pageControl3.currentBkImage = UIImage(named: "image1")
+        pageControl3.otherBkImage = UIImage(named: "image2")
         pageControl3.isUserInteractionEnabled = true
+        pageControl3.isCanClickPoint = true
 
         pageControl3.tag = 903
         view.addSubview(pageControl3)
